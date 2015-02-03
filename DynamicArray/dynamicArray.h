@@ -16,6 +16,8 @@ public:
 	void setElement(int _index, int _valeur);
 	void setCapacite(int _nouvelleCapacite);
 
+	DynamicArray& operator=(const DynamicArray & _source);
+	bool operator==(const DynamicArray &_source) const;
 
 private:
 	int* tabElement;

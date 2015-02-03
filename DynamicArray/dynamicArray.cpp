@@ -10,7 +10,7 @@ DynamicArray::DynamicArray(const DynamicArray &_source){
 	for (int i = 0; i < capacite; i++){
 		tabElement[i] = _source.tabElement[i];
 	}
-	
+
 }
 
 
@@ -31,6 +31,38 @@ DynamicArray::DynamicArray(int _capacite){
 
 DynamicArray::~DynamicArray(){
 	delete[] tabElement;
+}
+
+DynamicArray& DynamicArray::operator=(const DynamicArray &_source){
+
+	if (&_source != this){
+
+		delete[] tabElement;
+
+		capacite = _source.capacite;
+		tabElement = new int[capacite];
+
+		for (int i = 0; i < capacite; i++){
+			tabElement[i] = _source.tabElement[i];
+		}
+	}
+	return *this;
+}
+
+bool DynamicArray::operator==(const DynamicArray &_source) const{
+	bool estEgal = true;
+	int i = 0;
+
+	if (&_source != this && capacite == _source.capacite){
+		while (i < capacite && estEgal == true){
+			if (tabElement[i] != _source.tabElement[i]){
+				estEgal = false;
+			}
+			i++;
+		}
+	}
+
+	return estEgal;
 }
 
 int DynamicArray::getCapacite() const{
