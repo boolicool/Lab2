@@ -7,11 +7,18 @@ class DynamicArray
 
 public:
 
+	DynamicArray(int _capacite = 100);
+	~DynamicArray();
+
+	int getCapacite() const;
+	int getElement(int _index) const;
+	void setElement(int _index, int _valeur);
+	void setCapacite(int _nouvelleCapacite);
 
 
 private:
-
-
+	int* tabElement;
+	int capacite;
 };
 
 
