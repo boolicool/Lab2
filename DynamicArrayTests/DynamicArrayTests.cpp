@@ -263,26 +263,26 @@ namespace DynamicArrayTests
 			Assert::IsTrue(tableau1 == tableau2);
 		}
 
-		//	TEST_METHOD(etant_donne_deux_dynamicArrays_de_capacite_differente_l_operateur_d_egalite_devrait_retourner_faux)
-		//	{
-		//		//Arrange
-		//		DynamicArray tableau1(2);
-		//		DynamicArray tableau2(3);
+			TEST_METHOD(etant_donne_deux_dynamicArrays_de_capacite_differente_l_operateur_d_egalite_devrait_retourner_faux)
+			{
+				//Arrange
+				DynamicArray tableau1(2);
+				DynamicArray tableau2(3);
 
-		//		//Action-Assert
-		//		Assert::IsFalse(tableau1 == tableau2);
-		//	}
+				//Action-Assert
+				Assert::IsFalse(tableau1 == tableau2);
+			}
 
-		//	TEST_METHOD(etant_donne_deux_dynamicArrays_de_capacite_egale_mais_de_contenu_different_l_operateur_d_egalite_devrait_retourner_faux)
-		//	{
-		//		//Arrange
-		//		DynamicArray tableau1(2);
-		//		DynamicArray tableau2(2);
-		//		tableau2.setElement(1, 99);
+			TEST_METHOD(etant_donne_deux_dynamicArrays_de_capacite_egale_mais_de_contenu_different_l_operateur_d_egalite_devrait_retourner_faux)
+			{
+				//Arrange
+				DynamicArray tableau1(2);
+				DynamicArray tableau2(2);
+				tableau2.setElement(1, 99);
 
-		//		//Action-Assert
-		//		Assert::IsFalse(tableau1 == tableau2);
-		//	}
+				//Action-Assert
+				Assert::IsFalse(tableau1 == tableau2);
+			}
 
 
 		//	TEST_METHOD(l_operateur_d_addition_devrait_concatener_deux_dynamicArrays_si_differents)

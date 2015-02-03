@@ -61,6 +61,9 @@ bool DynamicArray::operator==(const DynamicArray &_source) const{
 			i++;
 		}
 	}
+	else{
+		estEgal = false;
+	}
 
 	return estEgal;
 }
