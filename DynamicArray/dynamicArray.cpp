@@ -2,6 +2,18 @@
 #include <iostream>
 using namespace std;
 
+
+DynamicArray::DynamicArray(const DynamicArray &_source){
+	capacite = _source.capacite;
+	tabElement = new int[capacite];
+
+	for (int i = 0; i < capacite; i++){
+		tabElement[i] = _source.tabElement[i];
+	}
+	
+}
+
+
 DynamicArray::DynamicArray(int _capacite){
 	//aurait du mettre le throw au début : if (_capacite <= 0) throw std::incalid_argument ("blabla");
 	if (_capacite > 0){
@@ -14,7 +26,6 @@ DynamicArray::DynamicArray(int _capacite){
 	else{
 		throw invalid_argument("La capacité doit être supérieure à 0");
 	}
-
 }
 
 

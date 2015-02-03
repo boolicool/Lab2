@@ -7,6 +7,7 @@ class DynamicArray
 
 public:
 
+	DynamicArray(const DynamicArray & _source);
 	DynamicArray(int _capacite = 100);
 	~DynamicArray();
 
