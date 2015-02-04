@@ -18,6 +18,7 @@ public:
 
 	DynamicArray& operator=(const DynamicArray & _source);
 	bool operator==(const DynamicArray &_source) const;
+	DynamicArray& operator+=(const DynamicArray & _source);
 
 private:
 	int* tabElement;

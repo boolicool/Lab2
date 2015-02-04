@@ -53,19 +53,35 @@ bool DynamicArray::operator==(const DynamicArray &_source) const{
 	bool estEgal = true;
 	int i = 0;
 
-	if (&_source != this && capacite == _source.capacite){
-		while (i < capacite && estEgal == true){
-			if (tabElement[i] != _source.tabElement[i]){
-				estEgal = false;
+	if (&_source != this){
+		if (capacite == _source.capacite){
+			while (i < capacite && estEgal == true){
+				if (tabElement[i] != _source.tabElement[i]){
+					estEgal = false;
+				}
+				i++;
 			}
-			i++;
+		}
+		else{
+			estEgal = false;
 		}
 	}
-	else{
-		estEgal = false;
-	}
+
 
 	return estEgal;
+}
+
+DynamicArray& DynamicArray::operator+=(const DynamicArray& _source){
+
+	int ancienneCapacite = capacite;
+	setCapacite(capacite + _source.capacite);
+
+	int j = 0;
+	for (int i = ancienneCapacite; i < capacite; i++){
+		tabElement[i] = _source.tabElement[j];
+		j++;
+	}
+	return *this;
 }
 
 int DynamicArray::getCapacite() const{

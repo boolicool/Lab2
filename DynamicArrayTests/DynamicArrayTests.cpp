@@ -285,42 +285,42 @@ namespace DynamicArrayTests
 			}
 
 
-		//	TEST_METHOD(l_operateur_d_addition_devrait_concatener_deux_dynamicArrays_si_differents)
-		//	{
-		//		//Arrange
-		//		const int TABLEAU_1_CAPACITE_DEPART = 3;
-		//		const int TABLEAU_2_CAPACITE = 5;
+			TEST_METHOD(l_operateur_d_addition_devrait_concatener_deux_dynamicArrays_si_differents)
+			{
+				//Arrange
+				const int TABLEAU_1_CAPACITE_DEPART = 3;
+				const int TABLEAU_2_CAPACITE = 5;
 
-		//		DynamicArray tableau1(TABLEAU_1_CAPACITE_DEPART);
-		//		for (unsigned int i = 0; i < TABLEAU_1_CAPACITE_DEPART; ++i)
-		//		{
-		//			tableau1.setElement(i, i*i);
-		//		}
-		//		
-		//		DynamicArray tableau2(TABLEAU_2_CAPACITE);
-		//		for (unsigned int i = 0; i < TABLEAU_2_CAPACITE; ++i)
-		//		{
-		//			tableau2.setElement(i, i*i*i);
-		//		}
+				DynamicArray tableau1(TABLEAU_1_CAPACITE_DEPART);
+				for (unsigned int i = 0; i < TABLEAU_1_CAPACITE_DEPART; ++i)
+				{
+					tableau1.setElement(i, i*i);
+				}
+				
+				DynamicArray tableau2(TABLEAU_2_CAPACITE);
+				for (unsigned int i = 0; i < TABLEAU_2_CAPACITE; ++i)
+				{
+					tableau2.setElement(i, i*i*i);
+				}
 
-		//		//Action
-		//		tableau1 += tableau2;
+				//Action
+				tableau1 += tableau2;
 
-		//		//Assert
-		//		Assert::AreEqual(TABLEAU_1_CAPACITE_DEPART + TABLEAU_2_CAPACITE, tableau1.getCapacite());
-		//		
-		//		//Est-ce que les éléments du tableau 1 sont toujours présents (à partir du début)
-		//		for (unsigned int i = 0; i < TABLEAU_1_CAPACITE_DEPART; ++i)
-		//		{
-		//			Assert::AreEqual(int(i*i), tableau1.getElement(i));
-		//		}
-		//		
-		//		//Est-ce que les éléments du tableau 2 ont été ajoutés à la suite du tableau 1 ?
-		//		for (unsigned int i = TABLEAU_1_CAPACITE_DEPART; i < tableau1.getCapacite(); ++i)
-		//		{
-		//			Assert::AreEqual(tableau2.getElement(i - TABLEAU_1_CAPACITE_DEPART), tableau1.getElement(i));
-		//		}
-		//	}
+				//Assert
+				Assert::AreEqual(TABLEAU_1_CAPACITE_DEPART + TABLEAU_2_CAPACITE, tableau1.getCapacite());
+				
+				//Est-ce que les éléments du tableau 1 sont toujours présents (à partir du début)
+				for (unsigned int i = 0; i < TABLEAU_1_CAPACITE_DEPART; ++i)
+				{
+					Assert::AreEqual(int(i*i), tableau1.getElement(i));
+				}
+				
+				//Est-ce que les éléments du tableau 2 ont été ajoutés à la suite du tableau 1 ?
+				for (unsigned int i = TABLEAU_1_CAPACITE_DEPART; i < tableau1.getCapacite(); ++i)
+				{
+					Assert::AreEqual(tableau2.getElement(i - TABLEAU_1_CAPACITE_DEPART), tableau1.getElement(i));
+				}
+			}
 
 		//	TEST_METHOD(l_operateur_d_addition_devrait_ajoueter_le_dynamicArray_a_sa_suite_si_identique)
 		//	{
