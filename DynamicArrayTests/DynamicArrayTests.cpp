@@ -226,6 +226,28 @@ namespace DynamicArrayTests
 
 		}
 
+		TEST_METHOD(le_constructeur_de_copie_devrait_copier_tout_le_contenu_d_un_dynamicArray_de_facon_profonde)
+		{
+			//Arrange
+			const int CAPACITE = 5;
+			DynamicArray tableau1(CAPACITE);
+
+			for (unsigned int i = 0; i < CAPACITE; ++i)
+			{
+				tableau1.setElement(i, i*i);
+			}
+
+			//Action
+			DynamicArray tableau2(tableau1);
+			tableau2.setElement(0, 99999);
+
+			//Assert
+
+		Assert::IsTrue(tableau1.getElement(0) != tableau2.getElement(0));
+			
+
+		}
+
 		TEST_METHOD(l_operateur_egal_devrait_copier_tout_le_contenu_d_un_dynamicArray)
 		{
 			//Arrange
